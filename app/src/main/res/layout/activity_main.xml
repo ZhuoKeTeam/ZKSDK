@@ -7,9 +7,16 @@
         tools:context=".MainActivity">
 
     <TextView
+            android:id="@+id/tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="Hello World!"/>
+
+    <com.zkteam.sdk.recyclerview.ZKRecyclerView
+            android:id="@+id/zk_rv"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tv"
+            android:layout_height="match_parent"/>
 
 </RelativeLayout>

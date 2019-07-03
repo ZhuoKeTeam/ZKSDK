@@ -9,16 +9,17 @@ import com.blankj.utilcode.util.ProcessUtils
 class ZKBaseAppplication : Application() {
 
     companion object {
-        private lateinit var sInstance: ZKBaseAppplication
-
-        fun getInstance(): ZKBaseAppplication {
-            return sInstance
+        // 双重校验锁式（Double Check)
+        val instance: ZKBaseAppplication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            ZKBaseAppplication()
         }
     }
 
+    lateinit var context :Context
+
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        sInstance = this
+        ZKBaseAppplication.instance.context = this
         MultiDex.install(this)
     }
 

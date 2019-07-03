@@ -24,7 +24,7 @@ public abstract class ZKBaseActivity : AppCompatActivity(), IZKBaseView {
         initViews(mContentView)
         initListener()
         initLifecycleObserve()
-        initData(intent.extras!!)
+        initData(intent.extras)
     }
 
     @SuppressLint("ResourceType")

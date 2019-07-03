@@ -10,6 +10,6 @@ interface IZKBaseView {
     fun initViews(@Nullable contentView: View)
     fun initListener()
     fun initLifecycleObserve()
-    fun initData(@Nullable bundle: Bundle)
+    fun initData(@Nullable bundle: Bundle?)
     fun onDebouncingClick(view: View)
 }

@@ -18,7 +18,7 @@ public abstract class ZKBaseLazyFragment : ZKBaseFragment() {
         }
     }
 
-    override fun initData(bundle: Bundle) {
+    override fun initData(bundle: Bundle?) {
         if (userVisibleHint && !isDataLoaded) {
             doLazyBusiness()
             isDataLoaded = true
