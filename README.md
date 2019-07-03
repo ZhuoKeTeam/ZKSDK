@@ -28,3 +28,4 @@ ZKBase.init(this, true) // 设置 debug 的状态，默认不需要
 
 - 文档地址：https://www.jianshu.com/p/b343fcff51b0
 - 源码地址：https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+- 演示 apk 地址：https://fir.im/s91g
