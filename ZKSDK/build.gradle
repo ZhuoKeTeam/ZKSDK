@@ -28,5 +28,7 @@ dependencies {
     implementation deps.kotlin_stdlib8
 
     api deps.utilcode
+    api support.multidex
     api support.annotations
+    api support.app_compat
 }

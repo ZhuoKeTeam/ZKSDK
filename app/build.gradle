@@ -28,6 +28,6 @@ dependencies {
     implementation support.app_compat
     implementation deps.kotlin_stdlib8
 
-    implementation 'com.github.ZhuoKeTeam:ZKSDK:1.0.0'
-//    implementation project(path: ':ZKSDK')
+//    implementation 'com.github.ZhuoKeTeam:ZKSDK:1.0.0'
+    implementation project(path: ':ZKSDK')
 }
