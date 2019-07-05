@@ -1,5 +1,7 @@
 package com.zkteam.sdk.demo
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import com.zkteam.sdk.ZKBase
@@ -9,15 +11,20 @@ import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
 import com.zkteam.sdk.recyclerview.adapter.ZKTextBean
 import com.zkteam.sdk.testdata.TestBeautyData
+import com.zkteam.sdk.utils.ShortCutsCreator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : ZKBaseActivity() {
+
+    private var count: Int = 0
 
     override fun getLayoutId(): Int {
         return R.layout.activity_main
     }
 
     override fun initViews(contentView: View) {
+
+        ZKBase.init(this.application)
 
         val list = mutableListOf<ZKTextBean>()
 
@@ -33,7 +40,16 @@ class MainActivity : ZKBaseActivity() {
     }
 
     override fun initListener() {
-        //function
+        count++
+        bt.setOnClickListener {
+            ShortCutsCreator()
+                .createShortCut(
+                    "id$count",
+                    "id$count",
+                    "long-id$count",
+                    0, "disabled",
+                    Intent(Intent.ACTION_VIEW, Uri.parse("http://zkteam.cc/")))//R.mipmap.ic_add
+        }
     }
 
     override fun initLifecycleObserve() {
