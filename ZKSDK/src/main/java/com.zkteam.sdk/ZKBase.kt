@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.support.annotation.NonNull
+import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.Utils
 import com.zkteam.sdk.exception.ZKBaseException
 
@@ -16,7 +17,7 @@ class ZKBase private constructor() {
     companion object {
         @SuppressLint("StaticFieldLeak")
         private var mContext: Context? = null
-        var isDebug = BuildConfig.DEBUG
+        var isDebug = AppUtils.isAppDebug()
 
         /**
          * 初始化工具类 (推荐)
