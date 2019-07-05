@@ -1,0 +1,59 @@
+<resources>
+
+    <!--通用的宽度为：match_parent， 高度为：wrap_content-->
+    <style name="ZKLayoutMW">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--通用的宽度为：wrap_content， 高度为：wrap_content-->
+    <style name="ZKLayoutWW">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--TitleBar 通用标题样式-->
+    <style name="ZKTitleBarStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dp_15</item>
+    </style>
+
+    <!--TitleBar 通用标题 左边图片 样式-->
+    <style name="ZKTitleBarLeftIconStyle" parent="ZKTitleBarStyle">
+        <item name="android:layout_marginLeft">@dimen/dp_15</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--TitleBar 通用标题 文字 样式-->
+    <style name="ZKTitleBarTextStyle" parent="ZKTitleBarStyle">
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/dp_20</item>
+    </style>
+
+    <!--TitleBar 通用标题 右边图片 样式-->
+    <style name="ZKTitleBarRightIconStyle" parent="ZKTitleBarStyle">
+        <item name="android:layout_marginRight">@dimen/dp_15</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="ZKScanBottomImageStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dp_20</item>
+    </style>
+
+    <!--TitleBar 通用右边 文字 样式-->
+    <style name="ZKTitleBarRightTextStyle" parent="ZKTitleBarStyle">
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_15</item>
+    </style>
+
+</resources>
