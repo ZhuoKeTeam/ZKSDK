@@ -67,6 +67,26 @@ zkRecyclerView.adapter = ZKTextAdapter(ZKTextData.getData()) // SDK 中默认展
 
 当 Fragment 可见的时候做一些事情
 
+## SP 文件操作
+
+默认使用：
+```
+SPUtils.getInstance("spName").put("key", "value")
+```
+也可以 继承自 ZKSharedPreferences()：
+```
+class ZKSDKSP : ZKSharedPreferences() {
+    override fun sharedPreferencesFileName(): String {
+        return SP_NAME
+    }
+}
+
+```
+
+//使用方式
+ZKSDKSP().put("key", "value")
+L.d("value= ${ZKSDKSP().get("key", "默认值")}")
+
 ## utilcode
 
 - 文档地址：https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
