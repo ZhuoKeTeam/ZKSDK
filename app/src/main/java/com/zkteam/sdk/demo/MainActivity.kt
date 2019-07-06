@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.view.View
 import com.zkteam.sdk.ZKBase
 import com.zkteam.sdk.base.ZKBaseActivity
-import com.zkteam.sdk.base.ZKBaseAppplication
+import com.zkteam.sdk.base.ZKBaseApplication
 import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
-import com.zkteam.sdk.recyclerview.adapter.ZKTextBean
-import com.zkteam.sdk.testdata.TestBeautyData
+import com.zkteam.sdk.recyclerview.adapter.ZKTextData
 import com.zkteam.sdk.utils.ShortCutsCreator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,17 +25,10 @@ class MainActivity : ZKBaseActivity() {
 
         ZKBase.init(this.application)
 
-        val list = mutableListOf<ZKTextBean>()
+        val zkRecyclerView = contentView.findViewById<ZKRecyclerView>(R.id.zk_rv)
 
-        for ((index, name) in TestBeautyData.getNameForHLWHotWomen().withIndex()) {
-            list.add(ZKTextBean(name, index))
-        }
-
-        list.addAll(list)
-        list.addAll(list)
-
-        zk_rv.setLayoutManager(ZKRecyclerView.ZKRV_GRID_VIEW_V)
-        zk_rv.adapter = ZKTextAdapter(list)
+        zkRecyclerView.setLayoutManager(ZKRecyclerView.ZKRV_GRID_VIEW_V)
+        zkRecyclerView.adapter = ZKTextAdapter(ZKTextData.getData())
     }
 
     override fun initListener() {
@@ -59,8 +51,8 @@ class MainActivity : ZKBaseActivity() {
     override fun initData(bundle: Bundle?) {
         ZKBase.isDebug
         ZKBase.context()
-        ZKBaseAppplication.instance.isDebug()
-        ZKBaseAppplication.instance.isMainProcess()
+        ZKBaseApplication.instance.isDebug()
+        ZKBaseApplication.instance.isMainProcess()
     }
 
     override fun onDebouncingClick(view: View) {

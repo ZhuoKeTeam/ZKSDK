@@ -7,7 +7,10 @@ import com.blankj.utilcode.util.IntentUtils
 import com.blankj.utilcode.util.ToastUtils
 import java.util.*
 
-class ShareUtils {
+/**
+ * 分享相关
+ */
+object ShareUtils {
     fun shareText(context: Context, text: String, title: String) {
         try {
             context.startActivity(Intent.createChooser(IntentUtils.getShareTextIntent(text, true), title))

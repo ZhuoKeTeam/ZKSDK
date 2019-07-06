@@ -6,12 +6,12 @@ import android.support.multidex.MultiDex
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.ProcessUtils
 
-class ZKBaseAppplication : Application() {
+class ZKBaseApplication : Application() {
 
     companion object {
         // 双重校验锁式（Double Check)
-        val instance: ZKBaseAppplication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-            ZKBaseAppplication()
+        val instance: ZKBaseApplication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            ZKBaseApplication()
         }
     }
 
@@ -19,7 +19,7 @@ class ZKBaseAppplication : Application() {
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        ZKBaseAppplication.instance.context = this
+        ZKBaseApplication.instance.context = this
         MultiDex.install(this)
     }
 
