@@ -1,8 +1,8 @@
 package com.zkteam.sdk.base
 
 import android.os.Bundle
-import android.support.annotation.Nullable
 import android.view.View
+import androidx.annotation.Nullable
 
 interface IZKBaseView {
 

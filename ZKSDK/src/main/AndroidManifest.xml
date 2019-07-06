@@ -1,5 +1,7 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
           package="com.zkteam.sdk">
     <application
-            android:networkSecurityConfig="@xml/network_security_config"/>
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:appComponentFactory=""
+            tools:replace="android:appComponentFactory"/>
 </manifest>

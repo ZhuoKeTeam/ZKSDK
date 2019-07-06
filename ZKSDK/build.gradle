@@ -27,8 +27,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin_stdlib8
 
-    implementation(deps.kotlin_stdlib8) {
-        exclude module: 'kotlin-stdlib-jdk7' //by artifact name
+    api (jetpack.core_ktx) {
+        exclude module: 'kotlin-stdlib' //by artifact name
 //        exclude group: 'org.unwanted', module: 'iAmBuggy' //by both name and group
     }
 

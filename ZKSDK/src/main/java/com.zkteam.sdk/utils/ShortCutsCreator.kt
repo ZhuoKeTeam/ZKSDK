@@ -6,9 +6,9 @@ import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
 import android.os.Build
-import android.support.annotation.DrawableRes
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.annotation.DrawableRes
 import com.zkteam.sdk.ZKBase
 import java.util.*
 

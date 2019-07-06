@@ -2,8 +2,8 @@ package com.zkteam.sdk.sp
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.support.annotation.CallSuper
 import android.text.TextUtils
+import androidx.annotation.CallSuper
 import com.zkteam.sdk.ZKBase
 import com.zkteam.sdk.exception.ZKSPException
 

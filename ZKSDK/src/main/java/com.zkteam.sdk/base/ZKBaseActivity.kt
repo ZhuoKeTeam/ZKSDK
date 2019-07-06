@@ -3,10 +3,10 @@ package com.zkteam.sdk.base
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ClickUtils
 
 public abstract class ZKBaseActivity : AppCompatActivity(), IZKBaseView {

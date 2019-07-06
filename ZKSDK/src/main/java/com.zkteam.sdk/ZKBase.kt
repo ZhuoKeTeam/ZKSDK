@@ -3,7 +3,7 @@ package com.zkteam.sdk
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import android.support.annotation.NonNull
+import androidx.annotation.NonNull
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.Utils
 import com.zkteam.sdk.exception.ZKBaseException
