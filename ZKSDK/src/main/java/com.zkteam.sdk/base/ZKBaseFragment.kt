@@ -12,15 +12,16 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.blankj.utilcode.util.ClickUtils
 
-public abstract class ZKBaseFragment : Fragment(), IZKBaseView {
+abstract class ZKBaseFragment : Fragment(), IZKBaseView {
 
-    private val TAG = "ZKBaseFragment"
-    private val STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN"
+    companion object {
+        const val STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN"
+    }
 
     private val mClickListener = View.OnClickListener { v -> onDebouncingClick(v) }
 
-    protected lateinit var mActivity: Activity
-    protected lateinit var mInflater: LayoutInflater
+    lateinit var mActivity: Activity
+    lateinit var mInflater: LayoutInflater
     protected var mContentView: View? = null
 
     override fun onAttach(context: Context) {
@@ -58,7 +59,7 @@ public abstract class ZKBaseFragment : Fragment(), IZKBaseView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val bundle = arguments
-        initData(bundle!!)
+        initData(bundle)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -66,19 +67,21 @@ public abstract class ZKBaseFragment : Fragment(), IZKBaseView {
         initViews(mContentView!!)
         initListener()
         initLifecycleObserve()
-        initData(savedInstanceState)
     }
 
     override fun onDestroyView() {
         if (mContentView != null) {
-            (mContentView!!.parent as ViewGroup).removeView(mContentView)
+            val viewParent = mContentView!!.parent
+            if (viewParent != null) {
+                (viewParent as ViewGroup).removeView(mContentView)
+            }
         }
         super.onDestroyView()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putBoolean(STATE_SAVE_IS_HIDDEN, isHidden)
+        outState.putBoolean(Companion.STATE_SAVE_IS_HIDDEN, isHidden)
     }
 
     fun applyDebouncingClickListener(vararg views: View) {
