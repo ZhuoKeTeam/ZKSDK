@@ -31,7 +31,7 @@ class MainActivity : ZKBaseActivity() {
         SPUtils.getInstance("spName").put("key", "value")
 
         ZKSDKSP().put("key", "value")
-        L.d("value= ${ZKSDKSP().get("key", "默认值")}")
+        L.d("value= ${ZKSDKSP()["key", "默认值"]}")
 
         val zkRecyclerView = contentView.findViewById<ZKRecyclerView>(R.id.zk_rv)
 

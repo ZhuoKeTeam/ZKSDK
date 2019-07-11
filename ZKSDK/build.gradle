@@ -32,6 +32,8 @@ dependencies {
 //        exclude group: 'org.unwanted', module: 'iAmBuggy' //by both name and group
     }
 
+    api jetpack.lifecycle
+    api jetpack.viewmodel_ktx
     api deps.utilcode
     api support.multidex
     api support.annotations

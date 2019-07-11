@@ -23,7 +23,7 @@ public abstract class ZKBaseFragment : Fragment(), IZKBaseView {
     protected lateinit var mInflater: LayoutInflater
     protected var mContentView: View? = null
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         mActivity = context as Activity
     }
