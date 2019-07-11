@@ -66,7 +66,7 @@ public abstract class ZKBaseFragment : Fragment(), IZKBaseView {
         initViews(mContentView!!)
         initListener()
         initLifecycleObserve()
-        initData(savedInstanceState!!)
+        initData(savedInstanceState)
     }
 
     override fun onDestroyView() {
