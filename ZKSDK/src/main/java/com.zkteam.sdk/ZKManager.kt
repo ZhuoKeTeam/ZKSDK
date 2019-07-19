@@ -19,6 +19,7 @@ class ZKManager {
     fun init(application: Application) {
         mContext = application
         ZKBase.init(application)
+        initTakePhotoForApplication()
     }
 
 
