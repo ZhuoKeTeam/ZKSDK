@@ -6,7 +6,7 @@ import androidx.multidex.MultiDex
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.ProcessUtils
 
-class ZKBaseApplication : Application() {
+open class ZKBaseApplication : Application() {
 
     companion object {
         // 双重校验锁式（Double Check)
