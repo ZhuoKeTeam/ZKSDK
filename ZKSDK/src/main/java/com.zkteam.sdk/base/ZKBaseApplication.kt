@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.ProcessUtils
+import com.zkteam.sdk.ZKManager
 
 open class ZKBaseApplication : Application() {
 
@@ -21,6 +22,11 @@ open class ZKBaseApplication : Application() {
         super.attachBaseContext(base)
         ZKBaseApplication.instance.context = this
         MultiDex.install(this)
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        ZKManager.instance.init(this)
     }
 
     fun isDebug(): Boolean {
