@@ -6,11 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.LayoutRes
-import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ClickUtils
+import com.zkteam.ui.components.activity.ZKCommonBackBaseActivity
 
-public abstract class ZKBaseActivity : AppCompatActivity(), IZKBaseView {
+public abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
 
+    var isBack = true
 
     protected lateinit var mContentView: View
     protected lateinit var mContext: Activity
@@ -37,6 +38,14 @@ public abstract class ZKBaseActivity : AppCompatActivity(), IZKBaseView {
     fun applyDebouncingClickListener(vararg views: View) {
         ClickUtils.applyGlobalDebouncing(views, mClickListener)
         ClickUtils.applyScale(*views)
+    }
+
+    override fun isSwipeBack(): Boolean {
+        return isBack
+    }
+
+    fun setSwipeBack(swipeBack: Boolean) {
+        this.isBack = swipeBack
     }
 
 
