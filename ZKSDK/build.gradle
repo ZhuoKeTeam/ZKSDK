@@ -32,7 +32,10 @@ dependencies {
 //        exclude group: 'org.unwanted', module: 'iAmBuggy' //by both name and group
     }
 
-    api zkteam.zk_ui
+    api (zkteam.zk_ui) {
+        exclude group: 'com.github.ZhuoKeTeam' //by artifact name
+    }
+
     api jetpack.lifecycle
     api jetpack.viewmodel_ktx
     api deps.utilcode
