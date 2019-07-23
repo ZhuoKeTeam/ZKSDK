@@ -2,6 +2,9 @@
 
 [![](https://jitpack.io/v/ZhuoKeTeam/ZKSDK.svg)](https://jitpack.io/#ZhuoKeTeam/ZKSDK)
 
+## 组件快速使用说明：
+
+[组件快速说明](https://github.com/ZhuoKeTeam/ZKComponentDocument)
 
 ## 使用说明：
 

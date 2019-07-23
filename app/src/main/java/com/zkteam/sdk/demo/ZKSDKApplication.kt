@@ -1,13 +1,12 @@
 package com.zkteam.sdk.demo
 
-import android.app.Application
-import com.zkteam.sdk.ZKManager
+import com.zkteam.sdk.base.ZKBaseApplication
+import com.zkteam.ui.components.ZKUIManager
 
-class ZKSDKApplication : Application() {
+class ZKSDKApplication : ZKBaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
-
-        ZKManager.instance.init(this)
+        ZKUIManager.instance.setMainActivity(MainActivity::class.java)
     }
 }
