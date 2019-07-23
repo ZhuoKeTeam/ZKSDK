@@ -7,14 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.LayoutRes
 import com.blankj.utilcode.util.ClickUtils
-import com.zkteam.ui.components.activity.ZKCommonBackBaseActivity
 
 public abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
 
-    var isBack = true
+    private var useSwipePanel = true
 
-    protected lateinit var mContentView: View
-    protected lateinit var mContext: Activity
+    private lateinit var mContentView: View
+    private lateinit var mContext: Activity
 
     private val mClickListener = View.OnClickListener { v -> onDebouncingClick(v) }
 
@@ -41,12 +40,11 @@ public abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
     }
 
     override fun isSwipeBack(): Boolean {
-        return isBack
+        return useSwipePanel
     }
 
-    fun setSwipeBack(swipeBack: Boolean) {
-        this.isBack = swipeBack
+    fun setSwipeBack(useSwipePanel: Boolean) {
+        this.useSwipePanel = useSwipePanel
     }
-
 
 }
