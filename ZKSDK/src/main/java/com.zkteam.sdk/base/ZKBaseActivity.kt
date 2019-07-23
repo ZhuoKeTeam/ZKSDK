@@ -8,12 +8,12 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import com.blankj.utilcode.util.ClickUtils
 
-public abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
+abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
 
     private var useSwipePanel = true
 
-    private lateinit var mContentView: View
-    private lateinit var mContext: Activity
+    lateinit var mContentView: View
+    lateinit var mContext: Activity
 
     private val mClickListener = View.OnClickListener { v -> onDebouncingClick(v) }
 
