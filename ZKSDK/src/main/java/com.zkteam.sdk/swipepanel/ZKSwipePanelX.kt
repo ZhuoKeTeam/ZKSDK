@@ -24,7 +24,7 @@ import androidx.annotation.NonNull
 import com.zkteam.sdk.R
 
 
-class ZKSwipePanelX : FrameLayout {
+open class ZKSwipePanelX : FrameLayout {
 
     companion object {
         const val TAG = "SwipePanel"
