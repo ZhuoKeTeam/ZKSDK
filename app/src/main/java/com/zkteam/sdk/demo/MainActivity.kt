@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.SPUtils
 import com.zkteam.sdk.ZKBase
-import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.base.ZKBaseApplication
+import com.zkteam.sdk.base.ZKCommonDrawerActivity
 import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
 import com.zkteam.sdk.recyclerview.adapter.ZKTextData
@@ -16,7 +16,7 @@ import com.zkteam.sdk.utils.L
 import com.zkteam.sdk.utils.ShortCutsCreator
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : ZKBaseActivity() {
+class MainActivity : ZKCommonDrawerActivity() {
 
     private var count: Int = 0
 

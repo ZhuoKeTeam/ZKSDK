@@ -28,7 +28,7 @@ abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
     }
 
     @SuppressLint("ResourceType")
-    private fun setRootLayout(@LayoutRes layoutId: Int) {
+    open fun setRootLayout(@LayoutRes layoutId: Int) {
         if (layoutId <= 0) return
         mContentView = LayoutInflater.from(this).inflate(layoutId, null)
         setContentView(mContentView)

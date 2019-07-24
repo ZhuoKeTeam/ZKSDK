@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">lib</string>
+    <string name="author">孤独狂饮</string>
+    <string name="demo_of_android_util_code">Demo of ZKTeam</string>
+
 </resources>
