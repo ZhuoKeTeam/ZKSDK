@@ -16,7 +16,7 @@ object ShareUtils {
             context.startActivity(Intent.createChooser(IntentUtils.getShareTextIntent(text, true), title))
         } catch (e: Exception) {
             e.printStackTrace()
-            sendError(context)
+            sendError()
         }
 
     }
@@ -26,7 +26,7 @@ object ShareUtils {
             context.startActivity(Intent.createChooser(IntentUtils.getShareImageIntent(title, uri), title))
         } catch (e: Exception) {
             e.printStackTrace()
-            sendError(context)
+            sendError()
         }
 
     }
@@ -37,7 +37,7 @@ object ShareUtils {
             context.startActivity(Intent.createChooser(intent, title))
         } catch (e: Exception) {
             e.printStackTrace()
-            sendError(context)
+            sendError()
         }
     }
 
@@ -46,12 +46,13 @@ object ShareUtils {
             context.startActivity(Intent.createChooser(IntentUtils.getShareImageIntent(title, imageUris), title))
         } catch (e: Exception) {
             e.printStackTrace()
-            sendError(context)
+            sendError()
         }
 
     }
 
-    fun sendError(context: Context) {
+
+    fun sendError() {
         ToastUtils.showShort("分享错误")
     }
 

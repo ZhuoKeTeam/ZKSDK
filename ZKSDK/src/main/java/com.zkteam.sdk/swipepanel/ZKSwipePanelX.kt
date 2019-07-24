@@ -24,6 +24,7 @@ import androidx.annotation.NonNull
 import com.zkteam.sdk.R
 
 
+@Suppress("DEPRECATION")
 open class ZKSwipePanelX : FrameLayout {
 
     companion object {
@@ -44,7 +45,7 @@ open class ZKSwipePanelX : FrameLayout {
     private var mWidth: Int = 0
     private var mHeight: Int = 0
 
-    private lateinit var mPaint: Paint
+    private var mPaint: Paint
 
     private var halfSize: Float = 0.0f
     private var unit: Float = 0.0f
@@ -389,7 +390,7 @@ open class ZKSwipePanelX : FrameLayout {
             mRectF.top = mRectF.bottom - height
             mRectF.right = mRectF.left + width
         }
-        canvas.drawBitmap(mBitmaps[direction], null, mRectF, null)
+        canvas.drawBitmap(mBitmaps[direction]!!, null, mRectF, null)
     }
 
     private fun quad(pathX: Float, pathY: Float, direction: Int) {
@@ -593,12 +594,12 @@ open class ZKSwipePanelX : FrameLayout {
     }
 
     private fun getActivityByContext(@NonNull context: Context): Activity? {
-        var context = context
-        while (context is ContextWrapper) {
-            if (context is Activity) {
-                return context
+        var mContext = context
+        while (mContext is ContextWrapper) {
+            if (mContext is Activity) {
+                return mContext
             }
-            context = context.baseContext
+            mContext = mContext.baseContext
         }
         return null
     }

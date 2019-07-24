@@ -14,6 +14,7 @@ abstract class ZKCommonBackBaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        @Suppress("DEPRECATION")
         findViewById<FrameLayout>(android.R.id.content).setBackgroundColor(resources.getColor(R.color.white_back))
         initSwipeBack()
     }
