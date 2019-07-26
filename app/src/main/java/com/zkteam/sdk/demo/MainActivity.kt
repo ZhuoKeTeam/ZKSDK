@@ -6,38 +6,17 @@ import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.SPUtils
 import com.zkteam.sdk.ZKBase
+import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.base.ZKBaseApplication
-import com.zkteam.sdk.base.ZKCommonDrawerActivity
 import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
 import com.zkteam.sdk.recyclerview.adapter.ZKTextData
 import com.zkteam.sdk.sp.ZKSDKSP
 import com.zkteam.sdk.utils.L
 import com.zkteam.sdk.utils.ShortCutsCreator
-import com.zkteam.ui.components.webview.ZKWebViewActivity
-import com.zkteam.ui.components.webview.ZKWebViewActivity.Companion.FLAG_ZK_UI_WEBVIEW_URL
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : ZKCommonDrawerActivity() {
-    override fun onDrawerItemClickListener(itemId: Int): Boolean {
-        when(itemId) {
-            R.id.baseDrawerActionGitHub -> {
-                val urlGitHub = "https://github.com/ZhuoKeTeam"
-                startActivity(Intent(this, ZKWebViewActivity::class.java)
-                    .putExtra(FLAG_ZK_UI_WEBVIEW_URL, urlGitHub))
-            }
-            R.id.baseDrawerActionBlog -> {
-                val urlBlog = "https://www.gdky005.com"
-                startActivity(Intent(this, ZKWebViewActivity::class.java)
-                    .putExtra(FLAG_ZK_UI_WEBVIEW_URL, urlBlog))
-            }
-        }
-        return true
-    }
-
-    override fun setDrawerLayout(): Int {
-        return 0
-    }
+class MainActivity : ZKBaseActivity() {
 
     private var count: Int = 0
 

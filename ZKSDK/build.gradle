@@ -39,7 +39,6 @@ dependencies {
     api support.annotations
     api support.app_compat
     api support.recyclerview
-    api support.design
 
     api deps.rvh
     api deps.utilcodex
