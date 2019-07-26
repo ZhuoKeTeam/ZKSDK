@@ -28,10 +28,12 @@ dependencies {
     implementation support.app_compat
     implementation deps.kotlin_stdlib8
 
-    implementation(zkteam.zk_ui) {
-        exclude module:"ZKSDK"
-    }
+    implementation zkteam.zk_ui
+
+//    implementation(zkteam.zk_ui) {
+//        exclude module:"ZKSDK"
+//    }
 
 //    implementation 'com.github.ZhuoKeTeam:ZKSDK:1.0.0'
-    implementation project(path: ':ZKSDK')
+//    implementation project(path: ':ZKSDK')
 }

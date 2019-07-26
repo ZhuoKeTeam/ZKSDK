@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.SPUtils
 import com.zkteam.sdk.ZKBase
-import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.base.ZKBaseApplication
 import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
@@ -14,9 +13,17 @@ import com.zkteam.sdk.recyclerview.adapter.ZKTextData
 import com.zkteam.sdk.sp.ZKSDKSP
 import com.zkteam.sdk.utils.L
 import com.zkteam.sdk.utils.ShortCutsCreator
+import com.zkteam.ui.components.activity.ZKCommonDrawerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : ZKBaseActivity() {
+class MainActivity : ZKCommonDrawerActivity() {
+    override fun onDrawerItemClickListener(itemId: Int): Boolean {
+        return true
+    }
+
+    override fun setDrawerLayout(): Int {
+        return 0
+    }
 
     private var count: Int = 0
 
@@ -48,7 +55,8 @@ class MainActivity : ZKBaseActivity() {
                     "id$count",
                     "long-id$count",
                     0, "disabled",
-                    Intent(Intent.ACTION_VIEW, Uri.parse("http://zkteam.cc/")))//R.mipmap.ic_add
+                    Intent(Intent.ACTION_VIEW, Uri.parse("http://zkteam.cc/"))
+                )//R.mipmap.ic_add
         }
     }
 
