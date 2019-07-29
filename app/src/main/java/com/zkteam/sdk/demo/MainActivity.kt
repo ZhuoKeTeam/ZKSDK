@@ -42,7 +42,7 @@ class MainActivity : ZKBaseActivity() {
         zkRecyclerView.adapter = ZKTextAdapter(ZKTextData.getData())
     }
 
-    override fun initListener() {
+    override fun setListener() {
         count++
         bt.setOnClickListener {
             ShortCutsCreator()
@@ -56,20 +56,11 @@ class MainActivity : ZKBaseActivity() {
         }
     }
 
-    override fun initLifecycleObserve() {
-        //function
-    }
-
     override fun initData(bundle: Bundle?) {
         ZKBase.isDebug
         ZKBase.context()
         ZKBaseApplication.instance.isDebug()
         ZKBaseApplication.instance.isMainProcess()
     }
-
-    override fun onDebouncingClick(view: View) {
-        //function
-    }
-
 
 }

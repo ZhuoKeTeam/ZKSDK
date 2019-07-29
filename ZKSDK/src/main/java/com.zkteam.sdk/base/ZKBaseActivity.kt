@@ -37,6 +37,28 @@ abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
         initData(intent.extras)
     }
 
+    override fun initLifecycleObserve() {
+        //function
+        setLifecycleObserve()
+    }
+
+    open fun setLifecycleObserve() {
+    }
+
+    override fun onDebouncingClick(view: View) {
+        setDebouncingClick(view)
+    }
+
+    open fun setDebouncingClick(view: View) {
+    }
+
+    override fun initListener() {
+        setListener()
+    }
+
+    open fun setListener() {
+    }
+
     open fun initToolbar(toolbar: Toolbar?) {
         var newToolbar = getToolbar()
 
