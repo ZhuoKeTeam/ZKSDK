@@ -23,6 +23,5 @@ class ZKToolbar : Toolbar {
         toolbar.setSubtitleTextColor(Color.WHITE)
 
         addView(rootView)
-        setBackgroundColor(resources.getColor(R.color.colorPrimary))
     }
 }

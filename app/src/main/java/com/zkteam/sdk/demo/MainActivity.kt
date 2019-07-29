@@ -4,9 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.widget.Toolbar
 import com.blankj.utilcode.util.SPUtils
-import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.ZKBase
 import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.base.ZKBaseApplication
@@ -26,41 +24,9 @@ class MainActivity : ZKBaseActivity() {
         return R.layout.activity_main
     }
 
-    override fun getToolbar(): Toolbar? {
-        return toolbar
-    }
-
     override fun getToolbarMenu(): Int {
         return R.menu.menu_main
     }
-
-    override fun initToolbar(): Toolbar? {
-        val toolbar = super.initToolbar()
-        toolbar!!.setOnMenuItemClickListener {
-            var text = "点击了 menu."
-
-            when(it.itemId) {
-                R.id.all -> {
-                    text = "搜索"
-                }
-                R.id.notification -> {
-                    text = "通知"
-                }
-                R.id.action_item1 -> {
-                    text = "测试 1"
-                }
-                R.id.action_item2 -> {
-                    text = "测试 2"
-                }
-            }
-
-            ToastUtils.showShort(text)
-
-            true
-        }
-        return toolbar
-    }
-
 
     override fun initViews(contentView: View) {
         ZKBase.init(this.application, true)

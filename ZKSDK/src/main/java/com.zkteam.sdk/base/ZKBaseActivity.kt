@@ -28,40 +28,51 @@ abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
         super.onCreate(savedInstanceState)
         setRootLayout(getLayoutId())
         initViews(mContentView)
-        initToolbar()
 
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        initToolbar(toolbar)
 
         initListener()
         initLifecycleObserve()
         initData(intent.extras)
     }
 
-    open fun initToolbar(): Toolbar? {
-        val toolbar = getToolbar()
-        if (toolbar != null) {
-            setSupportActionBar(toolbar)
-            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    open fun initToolbar(toolbar: Toolbar?) {
+        var newToolbar = getToolbar()
 
-            toolbar.setNavigationOnClickListener {
-                finish()
-            }
+        if (newToolbar == null) {
+            newToolbar = toolbar
+        }
 
-            toolbar.popupTheme = R.style.ZKToolbar_Style_Theme_Popup_Menu
+        if (newToolbar != null) {
+            newToolbar.popupTheme = R.style.ZKToolbar_Style_Theme_Popup_Menu
 
-            toolbar.contentInsetStartWithNavigation = 0
-            toolbar.setTitleTextColor(Color.WHITE)
-            toolbar.setSubtitleTextColor(Color.WHITE)
+            newToolbar.contentInsetStartWithNavigation = 0
+            newToolbar.setTitleTextColor(Color.WHITE)
+            newToolbar.setSubtitleTextColor(Color.WHITE)
 
-            if (getToolbarMenu() > 0) {
-                toolbar.setOnMenuItemClickListener {
-                    var text = "点击了 menu."
-                    ToastUtils.showShort(text)
+            setToolbarContent(newToolbar)
+            setSupportActionBar(newToolbar)
+            setToolbarListener(newToolbar)
+        }
+    }
 
-                    true
-                }
+    open fun setToolbarListener(toolbar: Toolbar) {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
+        if (getToolbarMenu() > 0) {
+            // 可以复写该方法
+            toolbar.setOnMenuItemClickListener {
+                ToastUtils.showShort(it.title)
+                true
             }
         }
-        return toolbar
+    }
+
+    open fun setToolbarContent(toolbar: Toolbar) {
+        //function
     }
 
     @SuppressLint("ResourceType")
