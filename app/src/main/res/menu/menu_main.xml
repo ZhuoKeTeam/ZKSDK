@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.lhtb.toolbar.MainActivity">
+    <item
+            android:id="@+id/search"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="搜索"
+            app:showAsAction="ifRoom" />
+
+    <item
+            android:id="@+id/notification"
+            android:icon="@android:drawable/stat_notify_chat"
+            android:title="通知"/>
+
+    <item
+            android:id="@+id/action_item1"
+            android:title="测试 1"
+            app:showAsAction="never" />
+
+    <item
+            android:id="@+id/action_item2"
+            android:title="测试 2"
+            app:showAsAction="never" />
+</menu>

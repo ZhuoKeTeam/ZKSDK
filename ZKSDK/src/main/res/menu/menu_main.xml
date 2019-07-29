@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.lhtb.toolbar.MainActivity">
+
+    <item
+            android:id="@+id/zk_test_info"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:title="@string/app_name"
+            app:showAsAction="ifRoom" />
+
+    <item
+            android:id="@+id/zk_test_email"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/app_name"
+            app:showAsAction="ifRoom" />
+
+</menu>

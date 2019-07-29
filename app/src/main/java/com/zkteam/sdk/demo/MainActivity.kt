@@ -4,8 +4,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.Toolbar
 import com.blankj.utilcode.util.SPUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.ZKBase
+import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.base.ZKBaseApplication
 import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
@@ -13,17 +16,9 @@ import com.zkteam.sdk.recyclerview.adapter.ZKTextData
 import com.zkteam.sdk.sp.ZKSDKSP
 import com.zkteam.sdk.utils.L
 import com.zkteam.sdk.utils.ShortCutsCreator
-import com.zkteam.ui.components.activity.ZKCommonDrawerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : ZKCommonDrawerActivity() {
-    override fun onDrawerItemClickListener(itemId: Int): Boolean {
-        return true
-    }
-
-    override fun setDrawerLayout(): Int {
-        return 0
-    }
+class MainActivity : ZKBaseActivity() {
 
     private var count: Int = 0
 
@@ -31,8 +26,43 @@ class MainActivity : ZKCommonDrawerActivity() {
         return R.layout.activity_main
     }
 
-    override fun initViews(contentView: View) {
+    override fun getToolbar(): Toolbar? {
+        return toolbar
+    }
 
+    override fun getToolbarMenu(): Int {
+        return R.menu.menu_main
+    }
+
+    override fun initToolbar(): Toolbar? {
+        val toolbar = super.initToolbar()
+        toolbar!!.setOnMenuItemClickListener {
+            var text = "点击了 menu."
+
+            when(it.itemId) {
+                R.id.search -> {
+                    text = "搜索"
+                }
+                R.id.notification -> {
+                    text = "通知"
+                }
+                R.id.action_item1 -> {
+                    text = "测试 1"
+                }
+                R.id.action_item2 -> {
+                    text = "测试 2"
+                }
+            }
+
+            ToastUtils.showShort(text)
+
+            true
+        }
+        return toolbar
+    }
+
+
+    override fun initViews(contentView: View) {
         ZKBase.init(this.application, true)
 
         SPUtils.getInstance("spName").put("key", "value")

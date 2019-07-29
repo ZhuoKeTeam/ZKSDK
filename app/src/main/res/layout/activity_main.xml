@@ -6,15 +6,21 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ZKToolbar.Style"/>
+
 
     <Button
             android:id="@+id/bt"
+            android:layout_below="@+id/toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="创建 Shortcut"/>
 
     <TextView
             android:id="@+id/tv"
+            android:layout_below="@+id/bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
