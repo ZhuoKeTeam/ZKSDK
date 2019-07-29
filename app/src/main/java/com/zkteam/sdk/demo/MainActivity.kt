@@ -40,7 +40,7 @@ class MainActivity : ZKBaseActivity() {
             var text = "点击了 menu."
 
             when(it.itemId) {
-                R.id.search -> {
+                R.id.all -> {
                     text = "搜索"
                 }
                 R.id.notification -> {
