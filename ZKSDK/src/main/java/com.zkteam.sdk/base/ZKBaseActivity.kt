@@ -46,7 +46,7 @@ abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
                 finish()
             }
 
-            toolbar.popupTheme = R.style.ZKToolbar_Style_Popup_Menu
+            toolbar.popupTheme = R.style.ZKToolbar_Style_Theme_Popup_Menu
 
             toolbar.contentInsetStartWithNavigation = 0
             toolbar.setTitleTextColor(Color.WHITE)

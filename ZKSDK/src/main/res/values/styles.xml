@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -16,14 +16,22 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <style name="ZKToolbar.Style" parent="AppTheme" >
+    <style name="ZKToolbar" parent="@style/ThemeOverlay.AppCompat.Light">
+    </style>
+
+    <style name="ZKToolbar.Style" parent="ZKToolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">?attr/actionBarSize</item>
-        <item name="android:background">@color/colorPrimary</item>
     </style>
 
-    <style name="ZKToolbar.Style.Popup.Menu" parent="AppTheme" >
+
+    <style name="ZKToolbar.Style.Theme" parent="ZKToolbar" >
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <style name="ZKToolbar.Style.Theme.Popup.Menu" parent="ZKToolbar" >
         <item name="android:colorBackground">@color/colorPrimary</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="overlapAnchor">false</item>
