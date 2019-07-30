@@ -17,6 +17,15 @@
             android:layout_height="wrap_content"
             android:text="创建 Shortcut"/>
 
+    <Button
+            android:id="@+id/bt2"
+            android:layout_alignTop="@+id/bt"
+            android:layout_toRightOf="@+id/bt"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进入测试界面"/>
+
     <TextView
             android:id="@+id/tv"
             android:layout_below="@+id/bt"

@@ -54,6 +54,9 @@ class MainActivity : ZKBaseActivity() {
                     Intent(Intent.ACTION_VIEW, Uri.parse("http://zkteam.cc/"))
                 )//R.mipmap.ic_add
         }
+        bt2.setOnClickListener {
+            applicationContext.startActivity(Intent(applicationContext, TwoActivity::class.java))
+        }
     }
 
     override fun initData(bundle: Bundle?) {
