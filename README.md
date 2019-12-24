@@ -102,3 +102,8 @@ L.d("value= ${ZKSDKSP().get("key", "默认值")}")
 - 源码地址：https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 - 演示 apk 地址：https://fir.im/s91g
 
+## 可添加的三方项目
+
+https://github.com/yangchong211/YCStatusBar
+
+
