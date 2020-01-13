@@ -3,6 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/zk_tool_bar"
-        app:theme="@style/ZKToolbar.Style.Theme"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:popupTheme="@style/ZKToolbar.Style.Theme.Popup.Menu"
         style="@style/ZKToolbar.Style"/>

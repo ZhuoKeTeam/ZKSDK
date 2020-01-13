@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.Toolbar
 import com.blankj.utilcode.util.SPUtils
 import com.zkteam.sdk.ZKBase
 import com.zkteam.sdk.base.ZKBaseActivity
@@ -12,6 +13,7 @@ import com.zkteam.sdk.recyclerview.ZKRecyclerView
 import com.zkteam.sdk.recyclerview.adapter.ZKTextAdapter
 import com.zkteam.sdk.recyclerview.adapter.ZKTextData
 import com.zkteam.sdk.sp.ZKSDKSP
+import com.zkteam.sdk.toolbar.ZKToolbar
 import com.zkteam.sdk.utils.L
 import com.zkteam.sdk.utils.ShortCutsCreator
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,6 +28,11 @@ class MainActivity : ZKBaseActivity() {
 
     override fun getToolbarMenu(): Int {
         return R.menu.menu_main
+    }
+
+    override fun initToolbar(toolbar: Toolbar?) {
+        super.initToolbar(toolbar)
+        showToolbarCenterView(toolbar as ZKToolbar)
     }
 
     override fun initViews(contentView: View) {

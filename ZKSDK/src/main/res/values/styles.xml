@@ -25,15 +25,7 @@
         <item name="android:minHeight">?attr/actionBarSize</item>
     </style>
 
-
-    <style name="ZKToolbar.Style.Theme" parent="ZKToolbar" >
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="colorControlNormal">@android:color/white</item>
-    </style>
-
     <style name="ZKToolbar.Style.Theme.Popup.Menu" parent="ZKToolbar" >
-        <item name="android:colorBackground">@color/colorPrimary</item>
-        <item name="android:textColor">@android:color/white</item>
         <item name="overlapAnchor">false</item>
     </style>
 

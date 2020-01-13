@@ -38,6 +38,16 @@ ZKBase.init(this, true) // 设置 debug 的状态，默认不需要
 - getSceneryPic(): 美丽的 10 张风景图片
 - getBigBeautyPic(): 10 张清纯不做作的美女图片
 
+### 6. ZKToolbar 的使用
+
+```
+    override fun initToolbar(toolbar: Toolbar?) {
+        super.initToolbar(toolbar)
+        showToolbarCenterView(toolbar as ZKToolbar) // 不显示左边的 返回按钮以及 toolbar 的文字
+        showToolbarCenterViewWithLeftBack(toolbar as ZKToolbar) // 显示左边的返回按钮，但不显示 toolbar 的文字。
+    }
+```
+
 ## ZKRecyclerView
 
 ### 1. 直接使用范例：

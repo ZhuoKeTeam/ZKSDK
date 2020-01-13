@@ -2,7 +2,6 @@ package com.zkteam.sdk.base
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -13,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import com.blankj.utilcode.util.ClickUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.R
+import com.zkteam.sdk.toolbar.ZKToolbar
 
 abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
 
@@ -67,16 +67,21 @@ abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
         }
 
         if (newToolbar != null) {
-            newToolbar.popupTheme = R.style.ZKToolbar_Style_Theme_Popup_Menu
-
-            newToolbar.contentInsetStartWithNavigation = 0
-            newToolbar.setTitleTextColor(Color.WHITE)
-            newToolbar.setSubtitleTextColor(Color.WHITE)
-
             setToolbarContent(newToolbar)
             setSupportActionBar(newToolbar)
             setToolbarListener(newToolbar)
         }
+    }
+
+    open fun showToolbarCenterView(toolbar: ZKToolbar) {
+        toolbar.showCenterView()
+        supportActionBar?.title = ""
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+    }
+
+    open fun showToolbarCenterViewWithLeftBack(toolbar: ZKToolbar) {
+        supportActionBar?.title = ""
+        toolbar.showCenterView()
     }
 
     open fun setToolbarListener(toolbar: Toolbar) {
