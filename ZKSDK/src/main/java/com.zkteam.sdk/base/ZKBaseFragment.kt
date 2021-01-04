@@ -22,7 +22,7 @@ abstract class ZKBaseFragment : Fragment(), IZKBaseView {
 
     lateinit var mActivity: Activity
     lateinit var mInflater: LayoutInflater
-    protected var mContentView: View? = null
+    var mContentView: View? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -51,7 +51,7 @@ abstract class ZKBaseFragment : Fragment(), IZKBaseView {
     }
 
     @SuppressLint("ResourceType")
-    fun setRootLayout(@LayoutRes layoutId: Int) {
+    open fun setRootLayout(@LayoutRes layoutId: Int) {
         if (layoutId <= 0) return
         mContentView = mInflater.inflate(layoutId, null)
     }

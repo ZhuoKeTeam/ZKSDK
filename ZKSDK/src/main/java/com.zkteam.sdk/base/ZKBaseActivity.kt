@@ -139,7 +139,7 @@ abstract class ZKBaseActivity : ZKCommonBackBaseActivity(), IZKBaseView {
 
     fun applyDebouncingClickListener(vararg views: View) {
         ClickUtils.applyGlobalDebouncing(views, mClickListener)
-        ClickUtils.applyScale(*views)
+//        ClickUtils.applyScale(*views)
     }
 
     override fun isSwipeBack(): Boolean {
