@@ -13,7 +13,7 @@ import java.util.*
 object ShareUtils {
     fun shareText(context: Context, text: String, title: String) {
         try {
-            context.startActivity(Intent.createChooser(IntentUtils.getShareTextIntent(text, true), title))
+            context.startActivity(Intent.createChooser(IntentUtils.getShareTextIntent(text), title))
         } catch (e: Exception) {
             e.printStackTrace()
             sendError()
@@ -23,7 +23,7 @@ object ShareUtils {
 
     fun shareImage(context: Context, uri: Uri, title: String) {
         try {
-            context.startActivity(Intent.createChooser(IntentUtils.getShareImageIntent(title, uri), title))
+            context.startActivity(Intent.createChooser(IntentUtils.getShareImageIntent(uri), title))
         } catch (e: Exception) {
             e.printStackTrace()
             sendError()
@@ -43,7 +43,7 @@ object ShareUtils {
 
     fun sendMoreImage(context: Context, imageUris: ArrayList<Uri>, title: String) {
         try {
-            context.startActivity(Intent.createChooser(IntentUtils.getShareImageIntent(title, imageUris), title))
+            context.startActivity(Intent.createChooser(IntentUtils.getShareImageIntent(imageUris), title))
         } catch (e: Exception) {
             e.printStackTrace()
             sendError()
