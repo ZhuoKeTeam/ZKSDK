@@ -22,7 +22,7 @@ abstract class ZKBaseFragment : Fragment(), IZKBaseView {
 
     lateinit var mActivity: Activity
     lateinit var mInflater: LayoutInflater
-    var mContentView: View? = null
+    lateinit var mContentView: View
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -64,17 +64,15 @@ abstract class ZKBaseFragment : Fragment(), IZKBaseView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        initViews(mContentView!!)
+        initViews(mContentView)
         initListener()
         initLifecycleObserve()
     }
 
     override fun onDestroyView() {
-        if (mContentView != null) {
-            val viewParent = mContentView!!.parent
-            if (viewParent != null) {
-                (viewParent as ViewGroup).removeView(mContentView)
-            }
+        val viewParent = mContentView.parent
+        if (viewParent != null) {
+            (viewParent as ViewGroup).removeView(mContentView)
         }
         super.onDestroyView()
     }
@@ -89,8 +87,7 @@ abstract class ZKBaseFragment : Fragment(), IZKBaseView {
     }
 
     fun <T : View> findViewById(@IdRes id: Int): T {
-        if (mContentView == null) throw NullPointerException("ContentView is null.")
-        return mContentView!!.findViewById(id)
+        return mContentView.findViewById(id)
     }
 
 }
