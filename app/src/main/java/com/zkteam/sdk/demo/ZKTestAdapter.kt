@@ -6,7 +6,7 @@ import com.zkteam.sdk.recyclerview.ZKBaseViewHolder
 class ZKTestAdapter(data: MutableList<ZKTestBean>) : ZKBaseAdapter<ZKTestBean>
     (android.R.layout.simple_list_item_1, data) {
 
-    override fun convert(helper: ZKBaseViewHolder, item: ZKTestBean?) {
+    override fun convert(helper: ZKBaseViewHolder, item: ZKTestBean) {
         if (item != null) {
             helper.setText(android.R.id.text1, item.name)
         }
