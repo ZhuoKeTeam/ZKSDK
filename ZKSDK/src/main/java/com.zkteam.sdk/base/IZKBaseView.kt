@@ -19,7 +19,7 @@ internal interface IZKBaseView {
      * 初始化 View
      * @param contentView View
      */
-    fun initViews(contentView: View?)
+    fun initViews(contentView: View)
 
     /**
      * 设置 监听器
