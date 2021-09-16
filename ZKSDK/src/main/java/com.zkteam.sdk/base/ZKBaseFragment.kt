@@ -56,17 +56,14 @@ abstract class ZKBaseFragment : Fragment(), IZKBaseView {
         mContentView = mInflater.inflate(layoutId, null)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val bundle = arguments
-        initData(bundle)
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initViews(mContentView)
         initListener()
         initLifecycleObserve()
+
+        val bundle = arguments
+        initData(bundle)
     }
 
     override fun onDestroyView() {
